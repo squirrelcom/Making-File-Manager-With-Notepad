@@ -1,7 +1,7 @@
 @Echo off
 cls
 
-Title File Manager - Demo - www.thebateam.org
+Title SqUIrrelManager
 Set "Path=%Path%;%cd%;%cd%\files"
 Color 0a
 Mode 80,25
@@ -31,7 +31,7 @@ set title= Batch Explorer By Kvc
 title %title%
 mode 120,42
 set cut=no
-for %%a in (fn_status wmic_status colous_status) do (if /i "!%%a!" NEQ "Available" (echo.&echo. One of three important files is Missing... Program May malfunction ...&&pause))
+for %%a in (fn_status wmic_status colous_status) do (if /i "!%%a!" NEQ "Available" (echo.&echo. One of three important files is Missing... SqUIrrel May malfunction ...&&pause))
 call :my_computer
 goto a
 
@@ -109,8 +109,8 @@ for /l %%a in (!page_start!,1,!page!) do (
 		set /a sa=!Columns!-5
 		FOR /L %%A IN (1,1,!Columns!) DO (if not "!var%%a:~%%A,1!" == "" (set /a var_=!var_! + 1))
 		set /a var_=!var_!+2
-		for /l %%b in (1,1,!var_!) do (set x=!x!Ä)
-		echo.Ú!x!¿&&echo.³ !var%%a! ³&&echo.À!x!Ù
+		for /l %%b in (1,1,!var_!) do (set x=!x!Ã„)
+		echo.Ãš!x!Â¿&&echo.Â³ !var%%a! Â³&&echo.Ã€!x!Ã™
 		)
 	if "%%a" neq "!active!" (
 		if defined var%%a (
@@ -173,13 +173,13 @@ if "%error%" == "332" (
 		set nkCount=0
 		set /a half_col=!Columns! / 2 - 10
 		for /l %%x in (1,1,!half_col!) do set "spaces=!spaces! "
-		for /l %%i in (1,1,20) do (set "x=!x!Í")
+		for /l %%i in (1,1,20) do (set "x=!x!Ã")
 		for /l %%x in (1,1,!half_lin!) do (echo.)
 		echo.!spaces!Enter Sr.No. of Ur Selection
-		echo.!spaces!É!x!»
-		echo.!spaces!º  Open File With... º
-		echo.!spaces!Ì!x!¹
-		echo.!spaces!º 0. Default         º
+		echo.!spaces!Ã‰!x!Â»
+		echo.!spaces!Âº  Open File With... Âº
+		echo.!spaces!ÃŒ!x!Â¹
+		echo.!spaces!Âº 0. Default         Âº
 		for /l %%s in (1,1,!height!) do (
 			set /a nkCount=!nkCount!+1
 			set /p item=<"!temp!\%%s.Setting"
@@ -188,10 +188,10 @@ if "%error%" == "332" (
 			FOR /L %%A IN (1,1,20) DO (if not "!item:~%%A,1!" == "" (set /a var_=!var_! + 1)&&set vari=!item!)
 			set open!nkCount!=!item!
 			if !var_! geq 20 (set "variable=!vari:~0,14!...") ELSE (set /a left=16-!var_!&&for /l %%j in (1,1,!left!) do (set "vari_=!vari_! ")&&set "variable=!vari!")
-			echo.!spaces!º !nkCount!.!variable!!vari_!º
+			echo.!spaces!Âº !nkCount!.!variable!!vari_!Âº
 			set "display!nkCount!= !variable!"
 			)
-		echo.!spaces!È!x!¼
+		echo.!spaces!Ãˆ!x!Â¼
 		set /a half_colu=!half_col!+3
 		set /a half_line=!half_lin!+7+!nkCount!
 		set two_presses=label_8
@@ -263,21 +263,21 @@ if "%error%" == "338" (
 	set spaces2=
 	set var_=0
 	set vari_=
-	for /l %%a in (1,1,48) do (set "spaces2=!spaces2! "&&set "x=!x!Ä")
+	for /l %%a in (1,1,48) do (set "spaces2=!spaces2! "&&set "x=!x!Ã„")
 	for /l %%a in (1,1,!half_col!) do (set "spaces=!spaces! ")
 	for /l %%a in (1,1,!half_lin!) do (echo.)
 	for /l %%a in (1,1,21) do (set "spaces1=!spaces1! ")
 	for %%a in (!active!) do (FOR /L %%A IN (1,1,40) DO (if not "!var%%a:~%%A,1!" == "" (set /a var_=!var_! + 1))&&set vari=!var%%a!)
 	if !var_! geq 40 (set "variable=!vari:~0,38!...") ELSE (set /a left=40-!var_!&&for /l %%a in (1,1,!left!) do (set "vari_=!vari_! ")&&set "variable=!vari!")
-	echo.!spaces!Ú!x!¿
-	echo.!spaces!³  Delete File Confirmation !spaces1!³
-	echo.!spaces!Ã!x!´
-	echo.!spaces!³!spaces2!³
-	echo.!spaces!³ Are You Sure to Delete the Selected item ??    ³
-	echo.!spaces!³ [!variable!]!vari_!    ³
-	echo.!spaces!³!spaces2!³
-	echo.!spaces!³ Press {Y ^/ N} :                                ³
-	echo.!spaces!À!x!Ù
+	echo.!spaces!Ãš!x!Â¿
+	echo.!spaces!Â³  Delete File Confirmation !spaces1!Â³
+	echo.!spaces!Ãƒ!x!Â´
+	echo.!spaces!Â³!spaces2!Â³
+	echo.!spaces!Â³ Are You Sure to Delete the Selected item ??    Â³
+	echo.!spaces!Â³ [!variable!]!vari_!    Â³
+	echo.!spaces!Â³!spaces2!Â³
+	echo.!spaces!Â³ Press {Y ^/ N} :                                Â³
+	echo.!spaces!Ã€!x!Ã™
 	set two_presses=label_2
 	goto a
 	:label_2
@@ -306,14 +306,14 @@ if "%error%" == "315" (
 	set x=
 	set name=
 	set spaces1=
-	for /l %%a in (1,1,22) do (set "spaces1=!spaces1! "&&set "x=!x!Ä")
+	for /l %%a in (1,1,22) do (set "spaces1=!spaces1! "&&set "x=!x!Ã„")
 	for /l %%a in (1,1,!half_col!) do (set "spaces=!spaces! ")
 	for /l %%a in (1,1,!half_lin!) do (echo.)
-	echo.!spaces!Ú!x!¿
-	echo.!spaces!³ Rename Folder Window ³
-	echo.!spaces!Ã!x!´
-	echo.!spaces!³!spaces1!³
-	echo.!spaces!À!x!Ù
+	echo.!spaces!Ãš!x!Â¿
+	echo.!spaces!Â³ Rename Folder Window Â³
+	echo.!spaces!Ãƒ!x!Â´
+	echo.!spaces!Â³!spaces1!Â³
+	echo.!spaces!Ã€!x!Ã™
 	set /a half_lin=!half_lin!+4
 	set /a half_col=!half_col!+2
 	set two_presses=label_7
@@ -382,14 +382,14 @@ if "%error%" == "14" (
 	set x=
 	set name=
 	set spaces1=
-	for /l %%a in (1,1,22) do (set "spaces1=!spaces1! "&&set "x=!x!Ä")
+	for /l %%a in (1,1,22) do (set "spaces1=!spaces1! "&&set "x=!x!Ã„")
 	for /l %%a in (1,1,!half_col!) do (set "spaces=!spaces! ")
 	for /l %%a in (1,1,!half_lin!) do (echo.)
-	echo.!spaces!Ú!x!¿
-	echo.!spaces!³  Create New Folder !spaces1:~0,2!³
-	echo.!spaces!Ã!x!´
-	echo.!spaces!³!spaces1!³
-	echo.!spaces!À!x!Ù
+	echo.!spaces!Ãš!x!Â¿
+	echo.!spaces!Â³  Create New Folder !spaces1:~0,2!Â³
+	echo.!spaces!Ãƒ!x!Â´
+	echo.!spaces!Â³!spaces1!Â³
+	echo.!spaces!Ã€!x!Ã™
 	set two_presses=label_3
 	goto a
 	:label_3
@@ -441,14 +441,14 @@ if "%error%" == "316" (
 	set spaces1=
 	set search=
 	set sign=+
-	for /l %%a in (1,1,22) do (set "spaces1=!spaces1! "&&set "x=!x!Ä")
+	for /l %%a in (1,1,22) do (set "spaces1=!spaces1! "&&set "x=!x!Ã„")
 	for /l %%a in (1,1,!half_col!) do (set "spaces=!spaces! ")
 	for /l %%a in (1,1,!half_lin!) do (echo.)
-	echo.!spaces!Ú!x!¿
-	echo.!spaces!³ Search an item...  !spaces1:~0,2!³
-	echo.!spaces!Ã!x!´
-	echo.!spaces!³!spaces1!³
-	echo.!spaces!À!x!Ù
+	echo.!spaces!Ãš!x!Â¿
+	echo.!spaces!Â³ Search an item...  !spaces1:~0,2!Â³
+	echo.!spaces!Ãƒ!x!Â´
+	echo.!spaces!Â³!spaces1!Â³
+	echo.!spaces!Ã€!x!Ã™
 	set two_presses=label_5
 	goto a
 	:label_5
@@ -523,15 +523,15 @@ if "%error%" == "21" (
 	)
 if "%error%" == "314" (
 	cls
-	echo. How to Use this File Manager ??
+	echo. How to Use SqUIrrelManager ??
 	echo.
-	echo. Using this File-manager is very easy ... just Use arrow keys to Browse
+	echo. Using SqUIrrelManager is very easy ... just Use arrow keys to Browse
 	echo. through files or folders ... files and folders are seprated by a Single
 	echo. line ^(- - - - - - - -^), use Up-DOwn keys to change file/folder Selection
 	echo. and Use Right-left arrow keys to get into or get out from a folder...
 	echo.
 	echo.
-	echo. Simple Shortcuts ^(same as in windows Explorer^) ...
+	echo. Shortcuts ^(Easy as Pie^) ...
 	echo.
 	echo. .[dot]: for jumping to next page...{Basically you just see ^> as forward on you kbd}
 	echo. ,[comma]: for jumping to previous page...{Basically you just see ^< as backward on you kbd}
@@ -676,7 +676,7 @@ set a=1
 set result=
 set line1=
 set /p ".=." <NUL
-for /l %%a in (1,1,%Colum%) do set "line1=!line1!Í"
+for /l %%a in (1,1,%Colum%) do set "line1=!line1!Ã"
 for /l %%a in (1,1,80) do set /p ".=" <nul
 set /p ".=." <NUL
 cls
@@ -697,14 +697,14 @@ set get=1
 if !perc! == 100 (set get=2)
 set /a county=!perc:~0,%get%!*4 >nul 2>&1
 if !perc! leq 10 (set county=1)
-for /l %%a in (1,1,!county!) do (set "current=!current!Û")
-IF "%perc:~1,1%" geq "2" (set "current=!current!²"&&set /A county=%county%+1)
-IF "%perc:~1,1%" geq "4" (set "current=!current:~0,-1!Û")
-IF "%perc:~1,1%" geq "6" (set "current=!current!²"&&set /A county=%county%+1)
-IF "%perc:~1,1%" geq "8" (set "current=!current:~0,-1!Û")
-IF "%perc:~1,1%" equ "9" (set "current=!current!²"&&set /A county=%county%+1)
+for /l %%a in (1,1,!county!) do (set "current=!current!Ã›")
+IF "%perc:~1,1%" geq "2" (set "current=!current!Â²"&&set /A county=%county%+1)
+IF "%perc:~1,1%" geq "4" (set "current=!current:~0,-1!Ã›")
+IF "%perc:~1,1%" geq "6" (set "current=!current!Â²"&&set /A county=%county%+1)
+IF "%perc:~1,1%" geq "8" (set "current=!current:~0,-1!Ã›")
+IF "%perc:~1,1%" equ "9" (set "current=!current!Â²"&&set /A county=%county%+1)
 set /a count2=40-!county! >nul 2>&1
-for /l %%a in (1,1,!count2!) do (set rest=!rest!±)
+for /l %%a in (1,1,!count2!) do (set rest=!rest!Â±)
 set /p cur_drive=<"%temp%\!a!.kvc"
 echo.
 set vary=!float[%a%]!
