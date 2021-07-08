@@ -27,7 +27,7 @@ WMIC.EXE Alias /?:Brief >NUL 2>&1 || (set wmic_status="Not Available")
 :: Check if colous.exe is available
 colous.EXE /?>NUL 2>&1 || (set colous_status="Not Available")
 fn.dll >NUL || (set fn_status="Not Available")
-set title= Batch Explorer By Kvc
+set title= SqUIrrel Manager
 title %title%
 mode 120,42
 set cut=no
